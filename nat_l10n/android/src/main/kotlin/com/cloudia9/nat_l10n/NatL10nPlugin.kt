@@ -68,9 +68,9 @@ class NatL10nPlugin : FlutterPlugin, MethodCallHandler {
         timeZoneIds: List<String>?,
         style: String?
     ): List<Map<String, Any?>>? {
-        val daytime = style == "shortWithDst" || style == "longWithDst" || style == "genericWithDst"
+        val daytime = style == "shortWithDst" || style == "longWithDst"
         val displayStyle =
-            if (style == "long" || style == "longWithDst") TimeZone.LONG else TimeZone.SHORT
+            if (style == "long" || style == "longWithDst" || style == "generic") TimeZone.LONG else TimeZone.SHORT
         return if (locale != null) {
             val loc = Locale.forLanguageTag(locale)
             val timeZones = timeZoneIds?.mapNotNull { TimeZone.getTimeZone(it) }
@@ -82,7 +82,7 @@ class NatL10nPlugin : FlutterPlugin, MethodCallHandler {
                         displayStyle,
                         loc
                     ),
-                    "offset" to if (daytime) it.rawOffset + it.dstSavings else it.rawOffset
+                    "offset" to (if (daytime) it.rawOffset + it.dstSavings else it.rawOffset) / 1000
                 )
             }
         } else null

@@ -15,11 +15,11 @@ enum TimeZoneStyle {
   /// Long form, e.g. 'Central European Summer Time'.
   longWithDst,
 
-  /// Generic form, e.g. 'GMT+/-HH:MM' (time offset).
-  /// Does not exist in Android, therefore 'short' is returned.
+  /// Generic form, e.g. 'Mountain Time'.
+  /// Does not exist in Android, therefore 'long' is returned.
   generic,
 
-  /// Generic form, e.g. 'GMT+/-HH:MM' (time offset with day saving time offset).
-  /// Does not exist in Android, therefore 'shortWithDst' is returned.
-  genericWithDst
+  /// Short Generic form, e.g. 'MT' (for Mountain Time).
+  /// Does not exist in Android, therefore 'short' is returned.
+  shortGeneric
 }
