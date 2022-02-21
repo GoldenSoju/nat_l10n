@@ -14,7 +14,7 @@ extension IntToHoursString on int {
   }
 
   String _hourMinuteFormatted() {
-    Duration duration = Duration(milliseconds: this);
+    Duration duration = Duration(seconds: this);
     String twoDigits(int n) => n.abs().toString().padLeft(2, "0");
     String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60).abs());
     return '${twoDigits(duration.inHours)}:$twoDigitMinutes';
