@@ -113,13 +113,9 @@ The example app includes a list of:
 
 #### a. Android/Kotlin
 [All supported Identifiers, Locales, Currency Codes](https://pl.kotl.in/_JBYkw3B3)
-<iframe src="https://pl.kotl.in/rBDKG2en5?theme=darcula"></iframe>
 
 #### b. iOS/Swift
 [All supported Identifiers, Locales, Currency Codes](https://swiftfiddle.com/gk3wbhklijd3nn22mjlboe2owu)
-<iframe width="100%" height="300" frameborder="0"
-src="https://swiftfiddle.com/gk3wbhklijd3nn22mjlboe2owu/embedded/">
-</iframe>
 
 ### 2. Regarding Time Zone Ids
 Which time zone ids are supported, depends on the underlying platform.  
