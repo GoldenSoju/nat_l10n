@@ -17,10 +17,10 @@ class TimeZoneInfo {
   /// and [TimeZoneStyle] when calling 'localizedTimeZones'.
   final String? translation;
 
-  /// The offset of this time zone from GMT+00:00 in milliseconds.
-  /// If [TimeZoneStyle.shortWithDst], [TimeZoneStyle.longWithDst] or
-  /// [TimeZoneStyle.genericWithDst] is specified, the offset also includes the
-  /// duration of the day saving time, but only if the time zone observes DST.
+  /// The offset of this time zone from GMT+00:00 in seconds.
+  /// If [TimeZoneStyle.shortWithDst] or [TimeZoneStyle.longWithDst] is
+  /// specified, the offset also includes the duration of the day saving time,
+  /// but only if the time zone observes DST.
   final int? offset;
 
   Map<String, dynamic> toJson() {

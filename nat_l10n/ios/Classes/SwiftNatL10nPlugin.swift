@@ -105,8 +105,8 @@ public class SwiftNatL10nPlugin: NSObject, FlutterPlugin {
     }
     
 }
-
 extension Locale {
+    /// Kudos to [mattt](https://gist.github.com/mattt/6d022b66f08ea8c1b99ebe7e48b95c4b)
     func localizedCurrencySymbol(_ currencyCode: String) -> String? {
         guard let languageCode = languageCode, let regionCode = regionCode else { return nil }
         let components: [String: String] = [
