@@ -28,15 +28,6 @@ Receive localized
 - locale entries
 - currency entries
 
-## Getting started
-
-Add the following dependency to the `pubspec.yaml` file:
-
-```yaml
-dependencies:
-  nat_l10n: ^0.0.1
-```
-
 ## Usage
 
 ### General
@@ -105,17 +96,86 @@ List<CurrencyInfo> localizedCurrencies = await natL10n.localizedCurrencies(
 ### 1. Help Utils
 The example app includes a list of:
 - Time Zone Ids (e.g. `'America/Denver'`),
-    - `nat_l10n/example/lib/src/time_zone_ids.dart`
+    - [`nat_l10n/example/lib/src/time_zone_ids.dart`](https://github.com/GoldenSoju/nat_l10n/blob/master/nat_l10n/example/lib/src/time_zone_ids.dart)
 - Locales (e.g. `Locale('en', 'US')`),
-    - `nat_l10n/example/lib/src/locales.dart`
+    - [`nat_l10n/example/lib/src/locales.dart`](https://github.com/GoldenSoju/nat_l10n/blob/master/nat_l10n/example/lib/src/locales.dart)
 - ISO 4217 Currency Codes (e.g. `'USD'`)
-    - `nat_l10n/example/lib/src/currencies.dart`
+    - [`nat_l10n/example/lib/src/currencies.dart`](https://github.com/GoldenSoju/nat_l10n/blob/master/nat_l10n/example/lib/src/currencies.dart)
 
-#### a. Android/Kotlin
+#### a) Android/Kotlin
 [All supported Identifiers, Locales, Currency Codes](https://pl.kotl.in/_JBYkw3B3)
 
-#### b. iOS/Swift
+<details>
+  <summary>Show Code</summary>
+
+```kotlin
+import java.util.*
+
+fun main() {
+    printTimeZones()
+    printLocales()
+    printCurrencies()
+}
+
+private fun printTimeZones() {
+    val timeZones = TimeZone.getAvailableIDs()
+    timeZones.forEach {
+       println("$it") 
+    }
+}
+
+private fun printLocales() {
+    val locales = Locale.getAvailableLocales()
+    locales.forEach {
+       println("$it") 
+    }
+}
+
+private fun printCurrencies() {
+    val currencies = Currency.getAvailableCurrencies()
+    currencies.forEach {
+       println("$it") 
+    }
+}
+```
+</details>
+
+#### b) iOS/Swift
 [All supported Identifiers, Locales, Currency Codes](https://swiftfiddle.com/gk3wbhklijd3nn22mjlboe2owu)
+
+<details>
+  <summary>Show Code</summary>
+
+```swift
+import Foundation
+
+printTimeZones()
+printLocales()
+printCurrencies()
+
+private func printTimeZones() {
+  let timeZones = TimeZone.knownTimeZoneIdentifiers
+  timeZones.forEach {
+    print("\($0 as String?)")
+  }
+}
+
+private func printLocales() {
+  let locales = Locale.availableIdentifiers
+  locales.forEach {
+    print("\($0 as String?)")
+  }
+}
+
+private func printCurrencies() {
+  let currencies = Locale.isoCurrencyCodes
+  // let currencies = Locale.commonISOCurrencyCodes
+  currencies.forEach {
+    print("\($0 as String?)")
+  }
+}
+```
+</details>
 
 ### 2. Regarding Time Zone Ids
 Which time zone ids are supported, depends on the underlying platform.  

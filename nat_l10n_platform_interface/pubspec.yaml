@@ -1,5 +1,5 @@
 name: nat_l10n_platform_interface
-description: Utility functions for calling localized Locales, Time Zones & Currencies from native platforms.
+description: Utility functions for calling localized Locales, Time Zones & Currencies from the underlying native platform.
 version: 0.0.1
 repository: https://github.com/GoldenSoju/nat_l10n/tree/master/nat_l10n_platform_interface
 

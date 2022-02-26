@@ -88,13 +88,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.11"
-  material_color_utilities:
-    dependency: transitive
-    description:
-      name: material_color_utilities
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.3"
   meta:
     dependency: transitive
     description:
@@ -108,13 +101,13 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.2"
   nat_l10n_platform_interface:
     dependency: transitive
     description:
-      path: "../../nat_l10n_platform_interface"
-      relative: true
-    source: path
+      name: nat_l10n_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.0.1"
   path:
     dependency: transitive
@@ -176,7 +169,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.8"
+    version: "0.4.3"
   typed_data:
     dependency: transitive
     description:
