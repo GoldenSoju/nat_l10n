@@ -58,6 +58,8 @@ void main() {
             return _tzTestResult.map((e) => e.toJson()).toList();
           case 'localizedLocales':
             return _localesTestResult.map((e) => e.toJson()).toList();
+          case 'respectivelyLocalizedLocales':
+            return _respectiveLocalesTestResult.map((e) => e.toJson()).toList();
           case 'localizedCurrencies':
             return _currenciesTestResult.map((e) => e.toJson()).toList();
           default:
@@ -71,18 +73,6 @@ void main() {
       final result = await methodChannelNatl10n.localizedTimeZones(
           const Locale('ko', 'KR'), ['Europe/Berlin', 'America/Denver']);
       expect(result, _tzTestResult);
-      /*expect(
-        log,
-        <Matcher>[
-          isMethodCall(
-            'localizedTimeZones',
-            arguments: {
-              'locale': Locale('ko', 'KR').toLanguageTag(),
-              'timeZone': ['Europe/Berlin', 'America/Denver'],
-            },
-          ),
-        ],
-      );*/
     });
 
     test('localizedLocales', () async {

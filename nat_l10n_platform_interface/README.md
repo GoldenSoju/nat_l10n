@@ -1,7 +1,7 @@
 
 # Native Localization (nat_l10n)
 
-Utility functions for calling localized Locales, Timezones & Currencies from native.
+Utility functions for calling localized Locales, Timezones & Currencies from the underlying native platform.
 
 A common platform interface for `nat_l10n`.
 

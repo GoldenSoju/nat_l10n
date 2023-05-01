@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 class CurrencyInfo {
   const CurrencyInfo(this.currencyCode, {this.translated, this.symbol});
 
@@ -28,9 +26,7 @@ class CurrencyInfo {
   }
 
   @override
-  int get hashCode {
-    return hashList([currencyCode, translated, symbol]);
-  }
+  int get hashCode => Object.hash(currencyCode, translated, symbol);
 
   @override
   bool operator ==(Object other) {

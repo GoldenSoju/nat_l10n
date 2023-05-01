@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 class LocaleInfo {
   const LocaleInfo(this.localeTag,
       {this.translatedLocale, this.translatedLanguage, this.translatedRegion});
@@ -34,10 +32,8 @@ class LocaleInfo {
   }
 
   @override
-  int get hashCode {
-    return hashList(
-        [localeTag, translatedLocale, translatedLanguage, translatedRegion]);
-  }
+  int get hashCode => Object.hash(
+      localeTag, translatedLocale, translatedLanguage, translatedRegion);
 
   @override
   bool operator ==(Object other) {
