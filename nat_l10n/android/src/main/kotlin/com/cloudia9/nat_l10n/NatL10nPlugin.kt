@@ -110,12 +110,7 @@ class NatL10nPlugin : FlutterPlugin, MethodCallHandler {
         localeTags: List<String>?
     ): List<Map<String, Any?>>? {
         val locales = localeTags?.mapNotNull { Locale.forLanguageTag(it) }
-        println("locales=${locales}")
         return locales?.map {
-            println("localeTag=${it.toLanguageTag()}")
-            println("translatedLocale=${it.getDisplayName(it)}")
-            println("translatedLanguage=${it.getDisplayLanguage(it)}")
-            println("translatedRegion=${it.getDisplayCountry(it)}")
             mapOf(
                 "localeTag" to it.toLanguageTag(),
                 "translatedLocale" to it.getDisplayName(it),
