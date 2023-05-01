@@ -16,7 +16,7 @@ class TimeZonesView extends StatefulWidget {
   final void Function(String) updateHeader;
 
   @override
-  _TimeZonesViewState createState() => _TimeZonesViewState();
+  State<TimeZonesView> createState() => _TimeZonesViewState();
 }
 
 class _TimeZonesViewState extends State<TimeZonesView> {
@@ -57,8 +57,8 @@ class _TimeZonesViewState extends State<TimeZonesView> {
       children: [
         const SizedBox(height: 10),
         DropDownRow(
-          _selectedLocale,
-          (loc) => loadTranslations(loc),
+          selectedLocale: _selectedLocale,
+          onChangeLocale: (loc) => loadTranslations(loc),
           secondMenu: [
             const Text(
               'Style:',
@@ -74,7 +74,7 @@ class _TimeZonesViewState extends State<TimeZonesView> {
                   isDense: true,
                   value: _style,
                   iconEnabledColor: Colors.white,
-                  dropdownColor: dropDownColor,
+                  dropdownColor: dropDownEnabledColor,
                   borderRadius: BorderRadius.circular(8.0),
                   items: TimeZoneStyle.values
                       .map<DropdownMenuItem<TimeZoneStyle>>(

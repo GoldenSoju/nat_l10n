@@ -88,14 +88,14 @@ void main() {
     expect(
         await natL10n.localizedLocales(const Locale('ko', 'KR'),
             const [Locale('en', 'US'), Locale('de', 'DE')]),
-        _tzTestResult);
+        _localesTestResult);
   });
 
   test('localizedLocales', () async {
     expect(
         await natL10n.respectivelyLocalizedLocales(
             const [Locale('en', 'US'), Locale('de', 'DE')]),
-        _tzTestResult);
+        _respectiveLocalesTestResult);
   });
 
   test('localizedCurrencies', () async {

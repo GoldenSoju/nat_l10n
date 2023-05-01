@@ -14,7 +14,7 @@ class LocalesView extends StatefulWidget {
   final void Function(String) updateHeader;
 
   @override
-  _LocalesViewState createState() => _LocalesViewState();
+  State<LocalesView> createState() => _LocalesViewState();
 }
 
 class _LocalesViewState extends State<LocalesView> {
@@ -55,8 +55,9 @@ class _LocalesViewState extends State<LocalesView> {
       children: [
         const SizedBox(height: 10),
         DropDownRow(
-          _selectedLocale,
-          (loc) => loadTranslations(loc),
+          selectedLocale: _selectedLocale,
+          onChangeLocale: (loc) => loadTranslations(loc),
+          enabled: _localizeRespectively == false,
           secondMenu: [
             const Text(
               'Respectively:',
@@ -72,7 +73,7 @@ class _LocalesViewState extends State<LocalesView> {
                   isDense: true,
                   value: _localizeRespectively,
                   iconEnabledColor: Colors.white,
-                  dropdownColor: dropDownColor,
+                  dropdownColor: dropDownEnabledColor,
                   borderRadius: BorderRadius.circular(8.0),
                   items: [false, true]
                       .map<DropdownMenuItem<bool>>(
