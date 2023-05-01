@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import '../nat_l10n_platform_interface.dart';
 
 class TimeZoneInfo {
@@ -33,9 +31,7 @@ class TimeZoneInfo {
   }
 
   @override
-  int get hashCode {
-    return hashList([id, translation, offset]);
-  }
+  int get hashCode => Object.hash(id, translation, offset);
 
   @override
   bool operator ==(Object other) {
