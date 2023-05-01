@@ -12,6 +12,9 @@
       <excludeFolder url="file://$MODULE_DIR$/nat_l10n/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/nat_l10n/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/nat_l10n/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/nat_l10n/example/ios/.symlinks/plugins/nat_l10n/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/nat_l10n/example/ios/.symlinks/plugins/nat_l10n/build" />
+      <excludeFolder url="file://$MODULE_DIR$/nat_l10n/example/ios/.symlinks/plugins/nat_l10n/.dart_tool" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
