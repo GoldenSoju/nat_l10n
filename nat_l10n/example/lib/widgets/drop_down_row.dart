@@ -4,16 +4,20 @@ import '../src/constants.dart';
 import '../src/locales.dart';
 
 class DropDownRow extends StatefulWidget {
-  const DropDownRow(this.selectedLocale, this.onChangeLocale,
-      {Key? key, this.secondMenu})
-      : super(key: key);
+  const DropDownRow(
+      {super.key,
+      required this.selectedLocale,
+      required this.onChangeLocale,
+      this.enabled = true,
+      this.secondMenu});
 
   final Locale selectedLocale;
   final void Function(Locale) onChangeLocale;
+  final bool enabled;
   final List<Widget>? secondMenu;
 
   @override
-  _DropDownRowState createState() => _DropDownRowState();
+  State<DropDownRow> createState() => _DropDownRowState();
 }
 
 class _DropDownRowState extends State<DropDownRow> {
@@ -36,16 +40,21 @@ class _DropDownRowState extends State<DropDownRow> {
               alignment: Alignment.center,
               isDense: true,
               value: widget.selectedLocale,
-              iconEnabledColor: Colors.white,
-              dropdownColor: dropDownColor,
+              iconEnabledColor: widget.enabled ? Colors.white : Colors.grey,
+              dropdownColor:
+                  widget.enabled ? dropDownEnabledColor : dropDownDisabledColor,
               borderRadius: BorderRadius.circular(8.0),
               items: allLocales
                   .map<DropdownMenuItem<Locale>>(
                       (e) => DropdownMenuItem<Locale>(
                           value: e,
+                          enabled: widget.enabled,
                           child: Text(
                             e.toString(),
-                            style: const TextStyle(fontSize: 14),
+                            style: const TextStyle(fontSize: 14).copyWith(
+                                color: widget.enabled
+                                    ? Colors.white
+                                    : Colors.grey),
                           )))
                   .toList(),
               onChanged: (Locale? newValue) {

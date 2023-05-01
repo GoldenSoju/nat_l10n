@@ -15,7 +15,7 @@ class CurrenciesView extends StatefulWidget {
   final void Function(String) updateHeader;
 
   @override
-  _CurrenciesViewState createState() => _CurrenciesViewState();
+  State<CurrenciesView> createState() => _CurrenciesViewState();
 }
 
 class _CurrenciesViewState extends State<CurrenciesView> {
@@ -53,7 +53,9 @@ class _CurrenciesViewState extends State<CurrenciesView> {
       mainAxisSize: MainAxisSize.max,
       children: [
         const SizedBox(height: 10),
-        DropDownRow(_selectedLocale, (loc) => loadTranslations(loc)),
+        DropDownRow(
+            selectedLocale: _selectedLocale,
+            onChangeLocale: (loc) => loadTranslations(loc)),
         const SizedBox(height: 10),
         Expanded(
           child: ListView.builder(

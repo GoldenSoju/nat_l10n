@@ -9,7 +9,8 @@ const backgroundColor = Color.fromARGB(255, 0, 0, 20);
 const foregroundColor = Color.fromARGB(255, 0, 0, 100);
 const indicatorColor = Color.fromARGB(255, 0, 142, 217);
 const cardBackgroundColor = Color.fromARGB(255, 0, 0, 50);
-const dropDownColor = Color.fromARGB(255, 0, 48, 100);
+const dropDownEnabledColor = Color.fromARGB(255, 0, 48, 100);
+const dropDownDisabledColor = Color.fromARGB(255, 23, 22, 22);
 
 const List<Locale> allLocales = [
   Locales.afNA,
