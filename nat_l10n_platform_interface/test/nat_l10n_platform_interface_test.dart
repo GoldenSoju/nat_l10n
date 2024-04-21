@@ -50,8 +50,9 @@ void main() {
 
     setUp(() async {
       methodChannelNatl10n = MethodChannelNatl10n();
-      methodChannelNatl10n.methodChannel
-          .setMockMethodCallHandler((methodCall) async {
+
+      Future<List<Map<String, dynamic>>?>? handler(
+          MethodCall methodCall) async {
         log.add(methodCall);
         switch (methodCall.method) {
           case 'localizedTimeZones':
@@ -65,7 +66,12 @@ void main() {
           default:
             return null;
         }
-      });
+      }
+
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(
+              methodChannelNatl10n.methodChannel, handler);
+
       log.clear();
     });
 
