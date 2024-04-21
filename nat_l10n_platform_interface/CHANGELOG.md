@@ -1,3 +1,8 @@
+## 1.1.0
+
+- Updates dependencies.
+- Removed deprecated `setMockMethodCallHandler` from tests.
+
 ## 1.0.0
 
 - Updates dependencies.

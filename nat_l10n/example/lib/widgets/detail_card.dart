@@ -3,8 +3,7 @@ import 'package:nat_l10n_example/src/constants.dart';
 
 class DetailCard extends StatelessWidget {
   const DetailCard(
-      {Key? key, required this.firstLine, required this.secondLine})
-      : super(key: key);
+      {super.key, required this.firstLine, required this.secondLine});
 
   final String firstLine;
   final String secondLine;

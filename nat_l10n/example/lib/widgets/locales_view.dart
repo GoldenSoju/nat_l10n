@@ -7,8 +7,7 @@ import 'package:nat_l10n_example/widgets/detail_card.dart';
 import 'package:nat_l10n_example/widgets/drop_down_row.dart';
 
 class LocalesView extends StatefulWidget {
-  const LocalesView(this.natL10n, this.updateHeader, {Key? key})
-      : super(key: key);
+  const LocalesView(this.natL10n, this.updateHeader, {super.key});
 
   final NatL10n natL10n;
   final void Function(String) updateHeader;

@@ -1,6 +1,6 @@
 name: nat_l10n_platform_interface
 description: Utility functions for calling localized Locales, Timezones & Currencies from the underlying native platform.
-version: 1.0.0
+version: 1.1.0
 repository: https://github.com/GoldenSoju/nat_l10n/tree/master/nat_l10n_platform_interface
 
 environment:
@@ -10,10 +10,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  meta: ^1.8.0
-  plugin_platform_interface: ^2.1.4
+  meta: ^1.11.0
+  plugin_platform_interface: ^2.1.8
 
 dev_dependencies:
-  flutter_lints: ^2.0.1
+  flutter_lints: ^3.0.2
   flutter_test:
     sdk: flutter
