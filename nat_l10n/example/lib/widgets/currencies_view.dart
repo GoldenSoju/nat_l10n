@@ -8,8 +8,7 @@ import '../widgets/detail_card.dart';
 import 'drop_down_row.dart';
 
 class CurrenciesView extends StatefulWidget {
-  const CurrenciesView(this.natL10n, this.updateHeader, {Key? key})
-      : super(key: key);
+  const CurrenciesView(this.natL10n, this.updateHeader, {super.key});
 
   final NatL10n natL10n;
   final void Function(String) updateHeader;
